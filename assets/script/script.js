@@ -17,7 +17,7 @@ function generatePassword() {
   let small = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   let tall = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",]
 
-  //step one-a password length 8-128
+  //prompt to set password length 8-128
  passlenth = window.prompt("How long would you like your password to be? Choose a number between 8 and 128");
  if (!passlenth) {
    alert("a value is required");
@@ -25,7 +25,7 @@ function generatePassword() {
  } else if (passlenth < 8 || passlenth > 128) {
   prompt("You MUST CHOOSE... a value between 8 and 128");
 
- //step one-b prompt user for lowercase uppercase numbers or special characters
+ //prompt for lowercase uppercase numbers or special characters
  } else {
    confirmNum = confirm("Do you want Numbers?");
    confirmSpecial = confirm("Do you want special characters?");
