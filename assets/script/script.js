@@ -1,28 +1,29 @@
-  // variables for our characters 
- var passlenth
- var confirmNum
- var confirmSpecial
- var confirmTall
- var confirmSmall
 
+var generateBtn = document.querySelector("#generate");
+
+// function to generate password
+function generatePassword() {
+// variables for our characters 
+ var passlenth;
+ var confirmNum;
+ var confirmSpecial;
+ var confirmTall;
+ var confirmSmall;
+ var charType;
+ var password = "";
  //arrays 
   let special = ["!", "@", "#", "$", "%", "&", "*", "+", "?"]
   let Numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
   let small = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   let tall = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",]
-var generateBtn = document.querySelector("#generate");
-// function to generate password
-function generatePassword() {
 
-
-  //step one prompt the user for the password criteria 
   //step one-a password length 8-128
- passlenth = prompt("How long would you like your password to be? Choose between 8 and 128");
+ passlenth = window.prompt("How long would you like your password to be? Choose a number between 8 and 128");
  if (!passlenth) {
    alert("a value is required");
 
  } else if (passlenth < 8 || passlenth > 128) {
-   passlenth = prompt("You MUST CHOOSE... a value between 8 and 128");
+  prompt("You MUST CHOOSE... a value between 8 and 128");
 
  //step one-b prompt user for lowercase uppercase numbers or special characters
  } else {
@@ -95,10 +96,16 @@ function generatePassword() {
   else if(confirmTall) {
     charType = tall;
   };
-  // a variable to store the randomly generated password
-  var password 
+  
+
+  // using math to randomly determine the password
+  for (var i= 0; i < passlenth; i++) {
+     password +=charType[Math.floor(Math.random() * charType.length)];
+   
+  }
+
   // display the password on page
-  return password
+  return password;
 }
 
 
